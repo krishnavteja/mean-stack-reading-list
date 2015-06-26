@@ -1,0 +1,12 @@
+{
+  "name": "Reading List",
+  "version": "0.1.0",
+  "description": "A MEAN stack App for personal Reading List",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.1",
+    "angular-route": "~1.4.1"
+  }
+}
