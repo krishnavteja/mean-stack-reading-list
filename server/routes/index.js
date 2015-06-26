@@ -30,7 +30,7 @@
       _id: mongojs.ObjectId(req.body._id)
     }, {
       isCompleted: req.body.isCompleted,
-      todo: req.body.todo
+      readingItem: req.body.readingItem
     }, {}, function(err, data) {
       res.json(data);
     });

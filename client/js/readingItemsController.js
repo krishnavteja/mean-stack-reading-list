@@ -31,7 +31,7 @@ readingItemsApp.controller('readingItemsCtrl', function($rootScope, $scope, read
       isCompleted: cbk,
       readingItem: _t.readingItem
     }).then(function(data) {
-      if (data.data.updatedExisting) {
+      if (data.data.ok && data.data.nModified) {
         _t.isCompleted = cbk;
       } else {
         alert('Oops something went wrong!');
@@ -48,7 +48,7 @@ readingItemsApp.controller('readingItemsCtrl', function($rootScope, $scope, read
         readingItem: $event.target.value.trim(),
         isCompleted: _t.isCompleted
       }).then(function(data) {
-        if (data.data.updatedExisting) {
+        if (data.data.ok && data.data.nModified) {
           _t.readingItem = $event.target.value.trim();
           $scope.isEditable[i] = false;
         } else {
@@ -60,7 +60,7 @@ readingItemsApp.controller('readingItemsCtrl', function($rootScope, $scope, read
  
   // Delete a readingItem
   $scope.delete = function(i) {
-    readingItemsFactory.deletereadingItem($scope.readingItems[i]._id).then(function(data) {
+    readingItemsFactory.deleteReadingItem($scope.readingItems[i]._id).then(function(data) {
       if (data.data) {
         $scope.readingItems.splice(i, 1);
       }
